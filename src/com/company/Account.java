@@ -7,20 +7,20 @@ public class Account {
     Scanner input = new Scanner(System.in);
     DecimalFormat moneyFormat = new DecimalFormat("'$'###,##0.00");
 
-    private int customerNumber;
+    private String customerName;
     private int pinNumber;
     private double checkingBalance = 0;
     private double savingBalance = 0;
 
     //Set customer number
-    public int setCustomerNumber(int customerNumber) {
-        this.customerNumber = customerNumber;
-        return customerNumber;
+    public String setCustomerName(String customerName) {
+        this.customerName = customerName;
+        return customerName;
     }
 
     //Get customer number
-    public int getCustomerNumber() {
-        return customerNumber;
+    public String getCustomerName() {
+        return customerName;
     }
 
     //Set pin number
