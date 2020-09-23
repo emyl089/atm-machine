@@ -5,42 +5,31 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import static com.company.Main.userText;
+
 public class OptionMenu extends Account{
     Scanner menuInput = new Scanner(System.in);
     DecimalFormat moneyFormat = new DecimalFormat("'$'###,##0.00");
 
-    HashMap<Integer, Integer> data = new HashMap<>();
+    public static String username;
+    public static String userpassword;
 
     int selection;
-    int x = 1;
+    public static int x = 1;
 
     //Validate Login information customer number and pin number
     public void getLogin() {
 
-        do {
-            try {
-                data.put(9876543, 9876);
-                data.put(8989898, 1890);
+        try {
+            username = "emil123";
+            userpassword = "123456";
 
-                System.out.println("Welcome to the E-ATM");
-
-                System.out.println("Enter Your Customer Number: ");
-                setCustomerNumber(menuInput.nextInt());
-
-                System.out.println("Enter Your Pin NUmber: ");
-                setPinNumber(menuInput.nextInt());
-            }
-            catch (Exception e) {
-                System.out.println("\n Invalid characters(s). Only numbers. \n");
-                x = 2;
-            }
-            for (Map.Entry<Integer, Integer> entry : data.entrySet()) {
-                if (entry.getKey() == getCustomerNumber() && entry.getValue() == getPinNumber()) {
-                    getAccountType();
-                }
-            }
-            System.out.println("\n Wrong Customer Number or Pin Number. \n");
-        } while (x == 1);
+            System.out.println("Welcome to the E-ATM");
+        }
+        catch (Exception e) {
+            System.out.println("\n Invalid characters(s). Only numbers. \n");
+            x = 2;
+        }
     }
 
     //Display Account Type Menu with selection
