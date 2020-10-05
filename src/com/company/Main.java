@@ -3,12 +3,12 @@ package com.company;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Map;
 
 public class Main extends OptionMenu implements ActionListener {
 
+    public static JFrame loginFrame;
     private static JLabel loginLabel;
-    public static JTextField userText;
+    private static JTextField userText;
     private static JLabel passwordLabel;
     private static JPasswordField userPassword;
     private static JButton loginButton;
@@ -19,9 +19,11 @@ public class Main extends OptionMenu implements ActionListener {
         optionMenu.getLogin();
 
         //Login Window
-        JFrame loginFrame = new JFrame();
+        loginFrame = new JFrame();
         loginFrame.setTitle("ATM");
         loginFrame.setSize(300, 150);
+        loginFrame.setLocationRelativeTo(null);
+        loginFrame.setResizable(false);
         loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Login Inside Window
@@ -72,11 +74,13 @@ public class Main extends OptionMenu implements ActionListener {
         System.out.println(user + " | " + password);
 
         if (OptionMenu.username.equals(user) && OptionMenu.userpassword.equals(password)) {
-            success.setText("Login successful!");
+            JOptionPane.showMessageDialog(loginFrame, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
             System.out.println("Login successful!");
-            getAccountType();
+            menuInterface();
         } else {
-            System.out.println("Login unsuccessful.");
+            System.out.println("Login un-successful.");
+            Object[] options = {"OK", "CANCEL"};
+            JOptionPane.showOptionDialog(loginFrame, "Username and password incorect", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
         }
     }
 }
