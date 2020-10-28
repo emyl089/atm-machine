@@ -11,3 +11,5 @@ Is a Java learning project
 <kbd>![Fig 5](https://github.com/emyl089/atm-machine/blob/master/Images/Fig5.png)</kbd>
 <kbd>![Fig 6](https://github.com/emyl089/atm-machine/blob/master/Images/Fig6.png)</kbd>
 <kbd>![Fig 7](https://github.com/emyl089/atm-machine/blob/master/Images/Fig7.png)</kbd>
+
+### :star: Use it as you wish, leave a Star :star:
